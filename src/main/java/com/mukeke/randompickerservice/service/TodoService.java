@@ -18,8 +18,9 @@ public class TodoService {
         return todoMapper.findAll();
     }
 
-    public void addTodo(Todo todo) {
+    public Todo addTodo(Todo todo) {
         todoMapper.insert(todo);
+        return todo;
     }
 
     public void updateTodo(Todo todo) {

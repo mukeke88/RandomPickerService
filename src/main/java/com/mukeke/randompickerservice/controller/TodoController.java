@@ -2,6 +2,7 @@ package com.mukeke.randompickerservice.controller;
 
 import com.mukeke.randompickerservice.model.Todo;
 import com.mukeke.randompickerservice.service.TodoService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,8 +22,9 @@ public class TodoController {
     }
 
     @PostMapping
-    public void addTodo(@RequestBody Todo todo) {
-        todoService.addTodo(todo);
+    public ResponseEntity<Todo> addTodo(@RequestBody Todo todo) {
+        Todo newTodo = todoService.addTodo(todo);
+        return ResponseEntity.ok(newTodo);
     }
 
     @PutMapping("/{id}")

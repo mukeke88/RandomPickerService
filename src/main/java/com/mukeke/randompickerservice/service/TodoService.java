@@ -30,4 +30,8 @@ public class TodoService {
     public void deleteTodo(int id) {
         todoMapper.deleteById(id);
     }
+
+    public void updateTodoWeight(int id, int weight) {
+        todoMapper.updateTodoWeight(id, weight);
+    }
 }

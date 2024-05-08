@@ -80,11 +80,9 @@
                 <version>${spring-boot.version}</version>
                 <configuration>
                     <mainClass>com.mukeke.randompickerservice.RandomPickerServiceApplication</mainClass>
-                    <skip>true</skip>
                 </configuration>
                 <executions>
                     <execution>
-                        <id>repackage</id>
                         <goals>
                             <goal>repackage</goal>
                         </goals>

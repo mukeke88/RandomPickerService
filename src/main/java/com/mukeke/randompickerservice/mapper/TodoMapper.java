@@ -19,4 +19,7 @@ public interface TodoMapper {
 
     @Delete("DELETE FROM todos WHERE id = #{id}")
     void deleteById(int id);
+
+    @Update("UPDATE todos SET weight = #{weight} WHERE id = #{id}")
+    void updateTodoWeight(int id, int weight);
 }

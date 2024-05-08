@@ -37,4 +37,9 @@ public class TodoController {
     public void deleteTodo(@PathVariable int id) {
         todoService.deleteTodo(id);
     }
+
+    @PatchMapping("/{id}/weight")
+    public void updateTodoWeight(@PathVariable int id, @RequestParam int weight) {
+        todoService.updateTodoWeight(id, weight);
+    }
 }

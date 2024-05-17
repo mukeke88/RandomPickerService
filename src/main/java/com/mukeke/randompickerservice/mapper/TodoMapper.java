@@ -21,5 +21,5 @@ public interface TodoMapper {
     void deleteById(int id);
 
     @Update("UPDATE todos SET weight = #{weight} WHERE id = #{id}")
-    void updateTodoWeight(int id, int weight);
+    void updateTodoWeight(@Param("id") int id, @Param("weight") int weight);
 }

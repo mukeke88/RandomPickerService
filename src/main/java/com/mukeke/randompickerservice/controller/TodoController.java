@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/todos")
@@ -39,7 +40,7 @@ public class TodoController {
     }
 
     @PatchMapping("/{id}/weight")
-    public void updateTodoWeight(@PathVariable int id, @RequestParam int weight) {
-        todoService.updateTodoWeight(id, weight);
+    public void updateTodoWeight(@PathVariable int id, @RequestBody Map<String, Integer> weight) {
+        todoService.updateTodoWeight(id, weight.get("weight"));
     }
 }
